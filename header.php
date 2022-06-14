@@ -14,7 +14,6 @@
 <!-- CSS only -->
 <script>
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'api/post.php');
 
     xhr.onload = function() {
         let data = JSON.parse(xhr.responseText);
@@ -24,13 +23,13 @@
             <div class="card">
                 <a href="post.php?id=${post.id}"><h2>${post.title}</h2></a>
                 <h5>${post.createdAt}</h5>
-                <div class="fakeimg" style="height:200px;">Image</div>
             </div>
             `;
         }
     }
 
     function getData() {
+        xhr.open('GET', 'http://172.70.8.171/kuliah/api/post.php');
         xhr.send();
     }
 </script>
